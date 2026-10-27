@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario · La Granja</title>
+  <meta name="description" content="Consulta del stock de productos de La Granja">
+  <meta name="theme-color" content="#1F4E79">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+  <a class="enlace-salto" href="#contenido">Saltar al contenido</a>
+  <header class="barra">
+    <div class="barra__in">
+      <a class="logo" href="index.html"><img src="img/logo.jpg" width="124" height="40" alt="Fruta Congelada La Granja, ir al inicio de sesión"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+          <li><a href="inventario.html" aria-current="page">Inventario</a></li><li><a href="en-construccion.html">Producción</a></li><li><a href="registrar-venta.html">Ventas</a></li><li><a href="reportes.html">Reportes</a></li>
+          <li class="usuario"><span>Carlos Gómez</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="tarjeta" aria-labelledby="titulo">
+      <div class="cabecera-pagina">
+        <h1 id="titulo">Inventario</h1>
+        <div class="acciones">
+          <a class="btn btn--primario" href="en-construccion.html">Registrar entrada</a>
+          <a class="btn btn--sec" href="en-construccion.html">Registrar salida</a>
+        </div>
+      </div>
+      <table class="tabla">
+        <caption class="sr-only">Stock actual de los productos</caption>
+        <thead>
+          <tr><th scope="col">Producto</th><th scope="col">Categoría</th><th scope="col" class="num">Stock actual</th><th scope="col" class="num">Stock mínimo</th><th scope="col" class="num">Precio unitario</th><th scope="col">Estado</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Fresa</th>
+            <td data-label="Categoría">Frutos rojos</td>
+            <td class="num" data-label="Stock actual">850 kg</td>
+            <td class="num" data-label="Stock mínimo">200 kg</td>
+            <td class="num" data-label="Precio unitario">$4.500</td>
+            <td data-label="Estado"><span class="insignia insignia--ok">Óptimo</span></td>
+          </tr>
+          <tr class="alerta">
+            <th scope="row">Mora</th>
+            <td data-label="Categoría">Frutos rojos</td>
+            <td class="num stock-bajo" data-label="Stock actual">140 kg</td>
+            <td class="num" data-label="Stock mínimo">180 kg</td>
+            <td class="num" data-label="Precio unitario">$3.800</td>
+            <td data-label="Estado"><span class="insignia insignia--bajo"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2Zm1 15h-2v-2h2v2Zm0-4h-2V9h2v4Z"/></svg> Stock bajo</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Mango</th>
+            <td data-label="Categoría">Frutas tropicales</td>
+            <td class="num" data-label="Stock actual">620 kg</td>
+            <td class="num" data-label="Stock mínimo">150 kg</td>
+            <td class="num" data-label="Precio unitario">$4.200</td>
+            <td data-label="Estado"><span class="insignia insignia--ok">Óptimo</span></td>
+          </tr>
+          <tr class="alerta">
+            <th scope="row">Arándano</th>
+            <td data-label="Categoría">Frutos rojos</td>
+            <td class="num stock-bajo" data-label="Stock actual">90 kg</td>
+            <td class="num" data-label="Stock mínimo">250 kg</td>
+            <td class="num" data-label="Precio unitario">$6.900</td>
+            <td data-label="Estado"><span class="insignia insignia--bajo"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2Zm1 15h-2v-2h2v2Zm0-4h-2V9h2v4Z"/></svg> Stock bajo</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Piña</th>
+            <td data-label="Categoría">Frutas tropicales</td>
+            <td class="num" data-label="Stock actual">410 kg</td>
+            <td class="num" data-label="Stock mínimo">120 kg</td>
+            <td class="num" data-label="Precio unitario">$3.400</td>
+            <td data-label="Estado"><span class="insignia insignia--ok">Óptimo</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="pie-tabla">Mostrando 5 productos · 2 con stock bajo</p>
+    </section>
+  </main>
+  <footer>
+    <p>La Granja</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar venta · La Granja</title>
+  <meta name="description" content="Registro de una venta con su cliente y sus productos">
+  <meta name="theme-color" content="#1F4E79">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+  <a class="enlace-salto" href="#contenido">Saltar al contenido</a>
+  <header class="barra">
+    <div class="barra__in">
+      <a class="logo" href="index.html"><img src="img/logo.jpg" width="124" height="40" alt="Fruta Congelada La Granja, ir al inicio de sesión"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+          <li><a href="inventario.html">Inventario</a></li><li><a href="en-construccion.html">Producción</a></li><li><a href="registrar-venta.html" aria-current="page">Ventas</a></li><li><a href="reportes.html">Reportes</a></li>
+          <li class="usuario"><span>Carlos Gómez</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="tarjeta" aria-labelledby="titulo">
+      <h1 id="titulo">Registrar venta</h1>
+      <form action="en-construccion.html" method="get">
+        <div class="fila-cliente">
+          <div>
+            <label for="cliente">Cliente <span class="req" aria-hidden="true">*</span><span class="sr-only">(obligatorio)</span></label>
+            <div class="campo-icono">
+              <input id="cliente" type="text" value="Distribuidora Los Andes S.A.S." autocomplete="off" required>
+              <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </div>
+          </div>
+          <a class="btn btn--sec" href="registrar-cliente.html">Nuevo cliente</a>
+        </div>
+
+        <section class="panel" aria-labelledby="agregar-titulo">
+          <h2 id="agregar-titulo">Agregar producto a la venta</h2>
+          <div class="rejilla">
+            <div>
+              <label for="producto">Producto <span class="req" aria-hidden="true">*</span><span class="sr-only">(obligatorio)</span></label>
+              <select id="producto">
+                <option value="Fresa" data-stock="850" data-precio="4500">Fresa</option>
+                <option value="Mora" data-stock="140" data-precio="3800" selected>Mora</option>
+                <option value="Mango" data-stock="620" data-precio="4200">Mango</option>
+                <option value="Arándano" data-stock="90" data-precio="6900">Arándano</option>
+                <option value="Piña" data-stock="410" data-precio="3400">Piña</option>
+              </select>
+              <p id="disponible" class="ayuda" aria-live="polite">Disponible: <strong>140 kg</strong></p>
+            </div>
+            <div>
+              <label for="cantidad">Cantidad (kg) <span class="req" aria-hidden="true">*</span><span class="sr-only">(obligatorio)</span></label>
+              <input id="cantidad" type="number" min="1" inputmode="numeric" value="25">
+              <p id="precio" class="ayuda">Precio: $3.800/kg</p>
+            </div>
+            <button id="agregar" class="btn btn--primario" type="button">Agregar</button>
+          </div>
+          <p id="msg-venta" class="error" role="alert"></p>
+        </section>
+
+        <table class="tabla">
+          <caption class="sr-only">Productos de la venta</caption>
+          <thead>
+            <tr><th scope="col">Producto</th><th scope="col" class="num">Cantidad</th><th scope="col" class="num">Precio unitario</th><th scope="col" class="num">Subtotal</th><th scope="col">Acciones</th></tr>
+          </thead>
+          <tbody id="detalle">
+            <tr data-producto="Mora" data-cantidad="50" data-subtotal="190000">
+              <th scope="row">Mora</th>
+              <td class="num" data-label="Cantidad">50 kg</td>
+              <td class="num" data-label="Precio unitario">$3.800</td>
+              <td class="num" data-label="Subtotal"><strong>$190.000</strong></td>
+              <td data-label="Acciones"><button type="button" class="btn btn--peligro quitar" aria-label="Quitar Mora">Quitar</button></td>
+            </tr>
+            <tr data-producto="Fresa" data-cantidad="30" data-subtotal="135000">
+              <th scope="row">Fresa</th>
+              <td class="num" data-label="Cantidad">30 kg</td>
+              <td class="num" data-label="Precio unitario">$4.500</td>
+              <td class="num" data-label="Subtotal"><strong>$135.000</strong></td>
+              <td data-label="Acciones"><button type="button" class="btn btn--peligro quitar" aria-label="Quitar Fresa">Quitar</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="total" aria-live="polite"><span>Total venta:</span> <strong id="total">$325.000</strong></p>
+
+        <div class="pie-form">
+          <p>Al confirmar, se descuenta del inventario.</p>
+          <div class="botones-fin">
+            <a class="btn btn--sec" href="registrar-venta.html">Cancelar</a>
+            <button class="btn btn--confirmar" type="submit">Confirmar venta</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>La Granja</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reportes · La Granja</title>
+  <meta name="description" content="Reportes de inventario, producción y ventas por período">
+  <meta name="theme-color" content="#1F4E79">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+  <a class="enlace-salto" href="#contenido">Saltar al contenido</a>
+  <header class="barra">
+    <div class="barra__in">
+      <a class="logo" href="index.html"><img src="img/logo.jpg" width="124" height="40" alt="Fruta Congelada La Granja, ir al inicio de sesión"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+          <li><a href="inventario.html">Inventario</a></li><li><a href="en-construccion.html">Producción</a></li><li><a href="registrar-venta.html">Ventas</a></li><li><a href="reportes.html" aria-current="page">Reportes</a></li>
+          <li class="usuario"><span>Carlos Gómez</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="tarjeta" aria-labelledby="titulo">
+      <h1 id="titulo">Reportes</h1>
+      <form class="filtros" action="reportes.html" method="get">
+        <div>
+          <label for="tipo">Tipo de reporte</label>
+          <select id="tipo">
+            <option>Inventario</option>
+            <option>Producción</option>
+            <option selected>Ventas</option>
+          </select>
+        </div>
+        <div>
+          <label for="inicio">Fecha de inicio</label>
+          <input id="inicio" type="date" value="2026-10-01">
+        </div>
+        <div>
+          <label for="fin">Fecha de fin</label>
+          <input id="fin" type="date" value="2026-10-31">
+        </div>
+        <button class="btn btn--primario" type="submit">Generar reporte</button>
+      </form>
+
+      <section class="resultado" aria-labelledby="rep-titulo">
+        <h2 id="rep-titulo">Reporte de ventas</h2>
+        <p class="periodo">Período: 01/10/2026 - 31/10/2026</p>
+        <table class="tabla">
+          <caption class="sr-only">Ventas de octubre de 2026 por cliente</caption>
+          <thead>
+            <tr><th scope="col">Cliente</th><th scope="col">Fecha</th><th scope="col" class="num">Total</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Distribuidora Frutícola del Sur</th>
+              <td data-label="Fecha">04/10/2026</td>
+              <td class="num" data-label="Total"><strong>$1.250.000</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Helados y Postres La Floresta</th>
+              <td data-label="Fecha">11/10/2026</td>
+              <td class="num" data-label="Total"><strong>$890.000</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Supermercados del Norte</th>
+              <td data-label="Fecha">18/10/2026</td>
+              <td class="num" data-label="Total"><strong>$2.340.000</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Pastelería Central</th>
+              <td data-label="Fecha">22/10/2026</td>
+              <td class="num" data-label="Total"><strong>$450.000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="barra-reporte">
+          <div class="acciones">
+            <a class="btn btn--sec" href="en-construccion.html">Exportar PDF</a>
+            <a class="btn btn--sec" href="en-construccion.html">Exportar Excel</a>
+          </div>
+          <p class="total">Ingresos totales: <strong>$4.930.000</strong></p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <p>La Granja</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

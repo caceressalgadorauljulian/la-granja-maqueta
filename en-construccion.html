@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sección fuera del prototipo · La Granja</title>
+  <meta name="description" content="Sección que no hace parte del prototipo de este entregable">
+  <meta name="theme-color" content="#1F4E79">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+  <a class="enlace-salto" href="#contenido">Saltar al contenido</a>
+  <header class="barra">
+    <div class="barra__in">
+      <a class="logo" href="index.html"><img src="img/logo.jpg" width="124" height="40" alt="Fruta Congelada La Granja, ir al inicio de sesión"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+          <li><a href="inventario.html">Inventario</a></li><li><a href="en-construccion.html">Producción</a></li><li><a href="registrar-venta.html">Ventas</a></li><li><a href="reportes.html">Reportes</a></li>
+          <li class="usuario"><span>Carlos Gómez</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="tarjeta tarjeta--form" aria-labelledby="titulo">
+      <h1 id="titulo">Esta sección no hace parte del prototipo</h1>
+      <p>Producción, el registro de entradas y salidas de inventario, el comprobante de venta y la exportación de reportes existen en el sistema, pero no se diseñaron en este prototipo.</p>
+      <p><a class="btn btn--primario" href="inventario.html">Volver al inventario</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>La Granja</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

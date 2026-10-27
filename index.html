@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión · La Granja</title>
+  <meta name="description" content="Acceso al sistema de gestión de Fruta Congelada La Granja">
+  <meta name="theme-color" content="#1F4E79">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+  <a class="enlace-salto" href="#contenido">Saltar al contenido</a>
+  <header class="barra barra--simple">
+    <div class="barra__in">
+      <a class="logo" href="index.html"><img src="img/logo.jpg" width="124" height="40" alt="Fruta Congelada La Granja, ir al inicio de sesión"></a>
+    </div>
+  </header>
+  <main id="contenido" class="login">
+    <section class="tarjeta tarjeta--login" aria-labelledby="titulo">
+      <h1 id="titulo">Iniciar sesión</h1>
+      <form action="inventario.html" method="get">
+        <label for="usuario">Correo electrónico</label>
+        <input id="usuario" type="email" autocomplete="username" placeholder="usuario@lagranja.com" required>
+        <label for="clave">Contraseña</label>
+        <div class="campo-clave">
+          <input id="clave" type="password" autocomplete="current-password" placeholder="••••••••" required>
+          <button class="ojo" type="button" aria-controls="clave" aria-pressed="false" aria-label="Mostrar contraseña"><svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <button class="btn btn--primario btn--completo" type="submit">Iniciar sesión</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>La Granja</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
